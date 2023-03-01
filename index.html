@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="css/bootstrap.min.css">         <!--  bootstrap link -->
+   <link rel="stylesheet" href="css/all.min.css">               <!--  fontawesome link -->
+   <link rel="stylesheet" href="css/style.css">                 <!--  my style link -->
+
+   <link rel="icon" href="/images/logos.png" type="image/x-icon">
+   <title>Small Shop</title>
+</head>
+<body class="text-capitalize">
+
+   <header >
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow p-1">
+         <div class="container">
+            <a class="navbar-brand" href="#"> <img src="images/logos.png" alt="logo" height="40px"></a>
+            <div class="d-flex gap-4 align-items-center order-lg-3">
+
+               <div class="shoppin-cart text-light position-relative " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                  <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                  <span class="cart-badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger ms-2">0</span>
+               </div>
+
+
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarScroll">
+               <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" >
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Shopping</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link active dropdown-toggle" aria-current="page" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     Products
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                     <li><a class="dropdown-item" href="#">Action</a></li>
+                     <li><a class="dropdown-item" href="#">Another action</a></li>
+                     <li><hr class="dropdown-divider"></li>
+                     <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+               </li>
+               </ul>
+
+            </div>
+
+
+         </div>
+
+      </nav>
+   </header>
+
+   <!--  shopping cart offcanvas -------------------------- -->
+   <div class="offcanvas offcanvas-end " data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+      <div class="offcanvas-header shadow">
+         <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Shopping Cart</h5>
+         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div id="addedProduct" class="offcanvas-body">
+         <!-- product-item img and title will added here -->
+      </div>
+      <div class="sub-total offcanvas-header shadow-lg d-flex justify-content-between flex-wrap">
+         <h5>Sub Total: </h5>
+         <h4 class="sub-total  w-75 text-end">$<span>0</span></h4>
+         <button type="button" class="clear btn btn-danger">Clear</button>
+         <button type="button" class="checkout btn btn-primary w-50">checkout</button>
+      </div>
+   </div>
+
+
+   <div class="banner my-5 text-center">
+      <div class="container">
+         <div class="row">
+            <div class="col">
+
+               <img src="images/banner16.jpg" alt="banner" width="100%">
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+   <!--  products -------------------------- -->
+   <div class="products">
+      <div class="container">
+         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3 my-5 py-5">
+
+            <div class="col">
+               <div class="card h-100 rounded">
+
+                  <div class="card-img">
+                     <span class="sale-padge position-absolute top-0 start-0 p-2 m-3 bg-primary text-light rounded-circle shadow">
+                        Sale
+                     </span>
+
+                     <div class="card-flip">
+                        <div class="primary-img">
+                           <img src="images/product1.jpg" class="card-img" alt="..." width="100%">
+                        </div>
+                        <div class="second-img">
+                           <img src="images/product2.jpg" class="card-img" alt="..." width="100%">
+                        </div>
+                     </div>
+
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Head Phone Black</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span class="text-decoration-line-through">$120.00</span>  <span class="text-danger"> $100.00 </span></h4>
+                  </div>
+
+                  <div class="cart-foot ">
+                     <div class="product-footer border border-top-0 rounded-bottom">
+                        <button
+                           type="button"
+                           class="addToCart btn btn-primary w-100 d-block py-3"
+                           price="100.00"
+                           product-item="Head Phone Black"
+                           img-src="images/product1.jpg"
+                           >
+                           <i class="fa fa-shopping-cart"></i>
+                           Add To Cart
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100 rounded">
+                  <div class="card-img">
+                     <div class="card-flip">
+                        <div class="primary-img">
+                           <img src="images/product3.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                        <div class="second-img">
+                           <img src="images/product4.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Head Phone Gold</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span>$120.00</span></h4>
+
+                  </div>
+                  <div class="cart-foot ">
+                     <div class="product-footer border border-top-0 rounded-bottom">
+                        <button
+                           type="button"
+                           class="addToCart btn btn-primary w-100 d-block py-3"
+                           price="120.00"
+                           product-item="Head Phone Gold"
+                           img-src="images/product3.jpg"
+                           >
+                              <i class="fa fa-shopping-cart"></i>
+                              Add To Cart
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100 rounded">
+                  <div class="card-img">
+                     <div class="card-flip">
+                        <div class="primary-img">
+                           <img src="images/product5.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                        <div class="second-img">
+                           <img src="images/product6.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">PC Desktop Screen</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between">  <span> $150.99 </span></h4>
+
+                  </div>
+                  <div class="cart-foot">
+                     <div class="product-footer border border-top-0 rounded-bottom">
+                        <button
+                         type="button"
+                         class="addToCart btn btn-primary w-100 d-block py-3"
+                         price="150.99"
+                         product-item="PC Desktop Screen"
+                           img-src="images/product5.jpg"
+                           >
+                           <i class="fa fa-shopping-cart"></i>
+                           Add To Cart
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100 rounded">
+                  <div class="card-img">
+                     <span class="sale-padge position-absolute top-0 start-0 p-2 m-3 bg-primary text-light rounded-circle shadow">
+                        Sale
+                     </span>
+
+                     <div class="card-flip">
+                        <div class="primary-img">
+                           <img src="images/product7.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                        <div class="second-img">
+                           <img src="images/product8.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Bluetooth Speacker</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span class="text-decoration-line-through">$120.00</span>  <span class="text-danger"> $100.00 </span></h4>
+
+                  </div>
+                  <div class="cart-foot">
+                     <div class="product-footer border border-top-0 rounded-bottom">
+                        <button
+                         type="button"
+                         class="addToCart btn btn-primary w-100 d-block py-3"
+                         price="100"
+                         product-item="Bluetooth Speacker"
+                         img-src="images/product7.jpg"
+                           >
+                           <i class="fa fa-shopping-cart"></i>
+                           Add To Cart
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100 rounded">
+                  <div class="card-img">
+                     <span class="sale-padge position-absolute top-0 start-0 p-2 m-3 bg-primary text-light rounded-circle shadow">
+                        Sale
+                     </span>
+
+                     <div class="card-flip">
+                        <div class="primary-img">
+                           <img src="images/product9.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                        <div class="second-img">
+                           <img src="images/product10.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Samsung phone note 8</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span class="text-decoration-line-through">$720.00</span>  <span class="text-danger"> $600.00 </span></h4>
+
+                  </div>
+                  <div class="cart-foot">
+                     <div class="product-footer border border-top-0 rounded-bottom">
+                        <button
+                         type="button"
+                         class="addToCart btn btn-primary w-100 d-block py-3"
+                         price="600.00"
+                         product-item="Samsung phone note 8"
+                         img-src="images/product9.jpg"
+                           >
+                           <i class="fa fa-shopping-cart"></i>
+                           Add To Cart
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100 rounded">
+                  <div class="card-img">
+                     <span class="sale-padge position-absolute top-0 start-0 p-2 m-3 bg-primary text-light rounded-circle shadow">
+                        Sale
+                     </span>
+
+                     <div class="card-flip">
+                        <div class="primary-img">
+                           <img src="images/product11.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                        <div class="second-img">
+                           <img src="images/product12.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">iPad 8 Pro</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span class="text-decoration-line-through">$1620.00</span>  <span class="text-danger"> $1500.00 </span></h4>
+
+                  </div>
+                  <div class="cart-foot">
+                     <div class="product-footer border border-top-0 rounded-bottom">
+                        <button
+                         type="button"
+                         class="addToCart btn btn-primary w-100 d-block py-3"
+                         price="1500.00"
+                         product-item="iPad 8 Pro"
+                         img-src="images/product11.jpg"
+                           >
+                           <i class="fa fa-shopping-cart"></i>
+                           Add To Cart
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100 rounded">
+                  <div class="card-img">
+                     <div class="card-flip">
+                        <div class="primary-img">
+                           <img src="images/product13.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                        <div class="second-img">
+                           <img src="images/product14.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">iPhone 12</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span> $900.00 </span></h4>
+
+                  </div>
+                  <div class="cart-foot">
+                     <div class="product-footer border border-top-0 rounded-bottom">
+                        <button
+                         type="button"
+                         class="addToCart btn btn-primary w-100 d-block py-3"
+                         price="900.00"
+                         product-item="iPhone 12"
+                         img-src="images/product13.jpg"
+                           >
+                           <i class="fa fa-shopping-cart"></i>
+                           Add To Cart
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100 rounded">
+                  <div class="card-img">
+                     <div class="card-flip">
+                        <div class="primary-img">
+                           <img src="images/product15.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                        <div class="second-img">
+                           <img src="images/product16.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Samsung s10 plus</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between">  <span> $1000.00 </span></h4>
+
+                  </div>
+                  <div class="cart-foot">
+                     <div class="product-footer border border-top-0 rounded-bottom">
+                        <button
+                         type="button"
+                         class="addToCart btn btn-primary w-100 d-block py-3"
+                         price="1000.00"
+                         product-item="Samsung s10 plus"
+                         img-src="images/product15.jpg"
+                        >
+                           <i class="fa fa-shopping-cart"></i>
+                           Add To Cart
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100 rounded">
+                  <div class="card-img">
+                     <div class="card-flip">
+                        <div class="primary-img">
+                           <img src="images/product17.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                        <div class="second-img">
+                           <img src="images/product18.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Apple watch</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span> $600.00 </span></h4>
+
+                  </div>
+                  <div class="cart-foot">
+                     <div class="product-footer border border-top-0 rounded-bottom">
+                        <button
+                         type="button"
+                         class="addToCart btn btn-primary w-100 d-block py-3"
+                         price="600.00"
+                         product-item="Apple watch"
+                         img-src="images/product17.jpg"
+                           >
+                           <i class="fa fa-shopping-cart"></i>
+                           Add To Cart
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100 rounded">
+                  <div class="card-img">
+                     <span class="sale-padge position-absolute top-0 start-0 p-2 m-3 bg-primary text-light rounded-circle shadow">
+                        Sale
+                     </span>
+
+                     <div class="card-flip">
+                        <div class="primary-img">
+                           <img src="images/product19.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                        <div class="second-img">
+                           <img src="images/product20.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Chair with handside</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span class="text-decoration-line-through">$120.00</span>  <span class="text-danger"> $100.80 </span></h4>
+
+                  </div>
+                  <div class="cart-foot">
+                     <div class="product-footer border border-top-0 rounded-bottom">
+                        <button
+                         type="button"
+                         class="addToCart btn btn-primary w-100 d-block py-3"
+                         price="100.80"
+                         product-item="Chair with handside"
+                         img-src="images/product.jpg"
+                        >
+                           <i class="fa fa-shopping-cart"></i>
+                           Add To Cart
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100 rounded">
+                  <div class="card-img">
+                     <span class="sale-padge position-absolute top-0 start-0 p-2 m-3 bg-primary text-light rounded-circle shadow">
+                        Sale
+                     </span>
+
+                     <div class="card-flip">
+                        <div class="primary-img">
+                           <img src="images/product26.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                        <div class="second-img">
+                           <img src="images/product27.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Classic Chair</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span class="text-decoration-line-through">$95.00</span>  <span class="text-danger"> $80.49 </span></h4>
+
+                  </div>
+                  <div class="cart-foot">
+                     <div class="product-footer border border-top-0 rounded-bottom">
+                        <button
+                         type="button"
+                         class="addToCart btn btn-primary w-100 d-block py-3"
+                         price="80.49"
+                         product-item="Classic Chair"
+                         img-src="images/product26.jpg"
+                        >
+                           <i class="fa fa-shopping-cart"></i>
+                           Add To Cart
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100 rounded">
+                  <div class="card-img">
+                     <span class="sale-padge position-absolute top-0 start-0 p-2 m-3 bg-primary text-light rounded-circle shadow">
+                        Sale
+                     </span>
+
+                     <div class="card-flip">
+                        <div class="primary-img">
+                           <img src="images/product28.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                        <div class="second-img">
+                           <img src="images/product29.jpg" class="card-img-top" alt="..." width="100%">
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="card-body">
+                     <h5 class="card-title">Wall Watch star</h5>
+                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between">
+                        <span class="text-decoration-line-through">$140.00</span>
+                        <span class="text-danger"> $120.00 </span></h4>
+                  </div>
+                  <div class="cart-foot">
+                     <div class="product-footer border border-top-0 rounded-bottom">
+                        <button
+                         type="button"
+                         class="addToCart btn btn-primary w-100 d-block py-3"
+                         price="120.00"
+                         product-item="Wall Watch star"
+                         img-src="images/product28.jpg"
+                        >
+                           <i class="fa fa-shopping-cart"></i>
+                           Add To Cart
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            </div>
+      </div>
+   </div>
+
+
+
+   <footer class="bg-primary text-light text-center m-0 p-3">
+      <p class="m-0">&copy; 2020 elecostic. All rights reserved. </p>
+   </footer>
+
+
+
+
+   <script src="js/bootstrap.bundle.min.js"></script>       <!--  bootstrap script -->
+   <script src="js/popper-2.11.6.minjs.js"></script>        <!--  popper script -->
+   <script src="js/jquery-3.6.3.min.js"></script>           <!--  jquery script -->
+   <script src="js/all.min.js"></script>                    <!--  fontawesome script -->
+   <script src="js/script.js"></script>                    <!--  my script -->
+</body>
+</html>

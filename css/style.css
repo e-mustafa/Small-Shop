@@ -1,0 +1,95 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+
+
+
+/* -------------------------- items in shopping cart -------------------------- */
+.offcanvas-body div{
+   border-radius: 5px;
+   padding: 16px;
+   /* color: white; */
+   /* background-color: #0d6efd; */
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+   border-bottom: 3px solid #0d6efd;
+   margin-bottom: 20px;
+}
+
+.offcanvas-body div img{
+   width: 50px;
+   margin-right: 20px;
+}
+
+
+/* -------------------------- products card -------------------------- */
+.card-img img{
+   box-shadow: 0 5px 1rem rgba(9, 106, 252, 0.082)!important;
+}
+.products .col:hover{
+   z-index: 10;
+}
+.products .col .card{
+   transform-style: preserve-3d;
+}
+.cart-foot{
+   position: relative;
+}
+.product-footer{
+   background-color: white;
+   padding: 15px;
+   position: absolute;
+   left: -1px;
+   height: 0;
+   width: 100.5%;
+   -webkit-transition: .5s ease-out;
+   transition: .5s ease-out;
+   -webkit-transform: translateY(-110px);
+   transform: translateY(-110px);
+   visibility: hidden;
+   opacity: 0;
+}
+.sale-padge{
+   z-index: 3;
+}
+.products .card:hover{
+   box-shadow: 0 .5rem 1rem rgba(22, 120, 231, 0.3);
+   border-bottom: 0 !important;
+}
+.products .card:hover .product-footer{
+   visibility: visible;
+   opacity: 1;
+   height: max-content;
+   -webkit-transform: translateY(-20px);
+   transform: translateY(-20px);
+   box-shadow: 0 1rem 1rem rgb(22 120 231 / 30%);
+}
+
+
+
+/* ------------------------------- products item card-flip ------------------------------- */
+.products .card .card-flip{
+   position: relative;
+   transform-style: preserve-3d;
+   -webkit-transition: .5s ease-out;
+   transition: .5s ease-out;
+}
+.products .card .primary-img{
+   -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
+}
+.products .card .second-img{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+}
+.products .card:hover .card-flip{
+   -webkit-transform: rotateY(180deg);
+   transform: rotateY(180deg);
+}
+
